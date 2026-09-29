@@ -176,5 +176,49 @@ $(function () {
         $('#tasks-list').append(messageCell);
     }
 
+
+    // part 4
+
+    $('button').button();
+
+    $('#dashboardTabs').tabs();
+    
+    $('#customerDialog').dialog({
+        autoOpen: false,
+        modal: true,
+        width: 450,
+    
+        buttons: {
+            "Create Customer": function () {
+                let name = $('#customerName').val();
+                let email = $('#customerEmail').val();
+    
+                if (!name || !email) {
+                    alert("Please enter a name and email.");
+                    return;
+                }
+    
+                alert("Customer created: " + name);
+    
+                $(this).dialog("close");
+            },
+    
+            "Cancel": function () {
+                $(this).dialog("close");
+            }
+        }
+    });
+
+    $('#accordion').accordion({
+        collapsible:true,
+        heightStyle: "content"
+    });
+
+    $('#newCustomerButton').on('click', ()=>{
+        $('#customerDialog').dialog("open");
+    });
+
+    $('#customerDate').datepicker();
+
     });
     
