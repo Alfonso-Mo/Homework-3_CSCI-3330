@@ -99,9 +99,82 @@ $(function () {
     // Do not modify the JS objects above. You will write your code below.
     // *********************************************************************
 
+    // part 3
 
+    $('#username').text(username);
+    $('.revenue-amt').text(revenueAmt);
+    $('#customer-num').text(customerNum);
+    $('#orders-amt').text(ordersAmt);
+    $('#issues-amt').text(issuesAmt);
+    $('#notification-num').text(notifAmt);
 
-       
+    for(let i = 0; i < sales.length; i++){
+    // create variables that hold a jQuery object, which allows to use jQuery methods (.text)
+        let productCell = $('<td></td>');
+        productCell.text(sales[i].product);
 
+        let quantityCell = $('<td></td>');
+        quantityCell.text(sales[i].quantity);
+
+        let revenueCell = $('<td></td>');
+        revenueCell.text(sales[i].revenue);
+
+        let row = $('<tr></tr>')
+        row.append(productCell, quantityCell, revenueCell);
+
+        // This appends everything that was assigned to the row variable into the <tbody>
+        $('#salesTableBody').append(row);
+    }
+
+    for(let i = 0; i < activities.length; i++){
+        let messageCell = $('<li></li>');
+        messageCell.text(activities[i].message);
+
+        $('#activity-list').append(messageCell);
+    }
+
+    for(let i = 0; i < customers.length; i++){
+        let nameCell = $('<td></td>');
+        nameCell.text(customers[i].name);
+
+        let emailCell = $('<td></td>');
+        emailCell.text(customers[i].email);
+
+        let statusCell = $('<td></td>');
+        statusCell.text(customers[i].status);
+        
+        let joinedCell = $('<td></td>');
+        joinedCell.text(customers[i].joined);
+
+        let row = $('<tr></tr>');
+        row.append(nameCell, emailCell, statusCell, joinedCell);
+
+        $('#customerTableBody').append(row);
+    }
+
+    for(let i = 0; i < messages.length; i++){
+        let messageCell = $('<li></li>');
+        messageCell.text(messages[i].messsage);
+
+        $('#system-status-list').append(messageCell);
+    }
+
+    for(let i = 0; i < notifications.length; i++){
+        let messageCell = $('<li></li>');
+        messageCell.text(notifications[i].messsage);
+
+        $('#notifications-list').append(messageCell);
+    }
+
+    
+
+    for(let i = 0; i < tasks.length; i++){
+        
+        let messageCell = $('<li></li>');
+        messageCell.text(tasks[i].messsage);
+
+        $('#tasks-list').append(messageCell);
+    }
 
     });
+    
