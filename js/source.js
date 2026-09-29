@@ -99,9 +99,13 @@ $(function () {
     // Do not modify the JS objects above. You will write your code below.
     // *********************************************************************
 
+    $('#username').text(username);
+    $('.revenue-amt').text(revenueAmt);
+    $('#customer-num').text(customerNum);
+    $('#orders-amt').text(ordersAmt);
+    $('#issues-amt').text(issuesAmt)
 
-
-       
+    
 
 
     });
